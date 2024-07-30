@@ -3,10 +3,8 @@ task({ :sample_data => :environment}) do
   require "faker"
   starting = Time.now
 
-  if Rails.env.production?
-    ActiveRecord::Base.connection.tables.each do |t|
-      ActiveRecord::Base.connection.reset_pk_sequence!(t)
-    end
+  ActiveRecord::Base.connection.tables.each do |t|
+    ActiveRecord::Base.connection.reset_pk_sequence!(t)
   end
 
   User.delete_all
