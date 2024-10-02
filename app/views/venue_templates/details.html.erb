@@ -74,7 +74,7 @@
 
 <h3>Add a new comment</h3>
 
-<form action="/insert_comment_record">
+<form action="/insert_comment_record/" method="post">
   <label for="browser_venue_id">Venue ID</label>
   <input id="browser_venue_id" type="text" value="<%= @the_venue.id %>" name="query_venue_id">
 
@@ -82,7 +82,7 @@
   <input id="browser_author_id" type="text" name="query_author_id">
 
   <label for="browser_comment">Comment</label>
-  <textarea id="browser_comment" name="query_body" placeholder="Enter a comment..."></textarea>
+  <textarea id="browser_comment" name="query_body"  placeholder="Enter a comment..."></textarea>
 
   <button>Add comment</button>
 </form>
