@@ -28,8 +28,15 @@ class UsersController < ApplicationController
   end
   
   def update
-    
-    
+    the_id = params.fetch("user_id")
+  
+    the_user = User.find(the_id)
+  
+    input_username = params.fetch("query_username")
+
+    the_user.update(:username => input_username)
+
+    redirect_to("/users/#{the_user.username}")  
   end
 
 end
